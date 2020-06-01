@@ -19,7 +19,7 @@ foreach my $task (qw(goto_door open_door walk_through_door close_door)) {
 }
 
 print Dumper({SequenceNode => $sequencenode});
-while (1) {
+while ($sequencenode->m_eStatus eq 'BH_INVALID' or $sequencenode->m_eStatus eq 'BH_RUNNING') {
   $sequencenode->tick();
   print Dumper({SequenceNode => $sequencenode});
 }

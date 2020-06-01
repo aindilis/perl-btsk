@@ -2,6 +2,8 @@ package FRDCSA::BehaviorTreeStarterKit::Composite;
 
 use base 'FRDCSA::BehaviorTreeStarterKit::Behavior';
 
+use Data::Dumper;
+
 use Class::MethodMaker
   new_with_init => 'new',
   get_set       =>
@@ -54,6 +56,7 @@ sub init {
 
 sub addChild {
   my ($self,%args) = @_;
+  print Dumper({m_Children => $self->m_Children});
   push @{$self->m_Children}, $args{Child};
 }
 

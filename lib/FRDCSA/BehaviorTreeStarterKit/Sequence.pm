@@ -44,6 +44,11 @@ sub onInitialize {
   $self->m_CurrentChild(0);
 }
 
+sub tick {
+  my ($self,%args) = @_;
+  print "Sequence ticking\n";
+  $self->SUPER::tick();
+}
 
 =item update()
 
