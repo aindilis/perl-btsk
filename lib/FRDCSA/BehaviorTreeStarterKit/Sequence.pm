@@ -46,7 +46,6 @@ sub onInitialize {
 
 sub tick {
   my ($self,%args) = @_;
-  print "Sequence ticking\n";
   $self->SUPER::tick();
 }
 
@@ -56,6 +55,7 @@ sub tick {
 
 sub update {
   my ($self,%args) = @_;
+  print "Sequence update\n";
   while (1) {
 
     my $status = $self->m_Children->[$self->m_CurrentChild]->tick();

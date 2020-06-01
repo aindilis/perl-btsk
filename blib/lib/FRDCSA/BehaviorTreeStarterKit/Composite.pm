@@ -46,8 +46,10 @@ GPLv3
 
 sub init {
   my ($self,%args) = @_;
-  $self->m_Children([]);
-  $self->SUPER::init(%args);
+  if (! $self->m_Children) {
+    $self->m_Children([]);
+  }
+  $self->FRDCSA::BehaviorTreeStarterKit::Behavior::init(%args);
 }
 
 =item addChild()
@@ -56,7 +58,6 @@ sub init {
 
 sub addChild {
   my ($self,%args) = @_;
-  print Dumper({m_Children => $self->m_Children});
   push @{$self->m_Children}, $args{Child};
 }
 

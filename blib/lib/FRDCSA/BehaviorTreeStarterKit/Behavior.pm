@@ -7,7 +7,7 @@ use Class::MethodMaker
   get_set       =>
   [
 
-   qw / Status m_eStatus /
+   qw / m_eStatus /
 
   ];
 
@@ -104,6 +104,8 @@ BT tick method.
 
 sub tick {
   my ($self,%args) = @_;
+  my $ref = ref($self);
+  print "Tick tock: $ref!\n";
   if ($self->m_eStatus ne 'BH_RUNNING') {
     $self->onInitialize();
   }
