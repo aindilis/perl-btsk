@@ -1,6 +1,6 @@
-package FRDCSA::BehaviorTree::Action;
+package FRDCSA::BehaviorTreeStarterKit::Action;
 
-use base 'FRDCSA::BehaviorTree::Behavior';
+use base 'FRDCSA::BehaviorTreeStarterKit::Behavior';
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -13,8 +13,8 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Action - Leaf nodes which interact with the
-environment.
+FRDCSA::BehaviorTreeStarterKit::Action - Leaf nodes which interact
+with the environment.
 
 =head1 DESCRIPTION
 
@@ -25,9 +25,9 @@ paraphrased.
 
 =head1 SYNOPSIS
 
-A class which inherits from FRDCSA::BehaviorTree::Behavior, and allows
-one to implement action nodes which carry out interaction with the
-blackboard and environment.
+A class which inherits from FRDCSA::BehaviorTreeStarterKit::Behavior,
+and allows one to implement action nodes which carry out interaction
+with the blackboard and environment.
 
 =head1 AUTHOR
 
@@ -47,10 +47,5 @@ side-effect.  Usually, you can pass extra params to interface with
 these components.
 
 =cut
-
-sub init {
-  my ($self,%args) = @_;
-  $self->SUPER::init(%args);
-}
 
 1;

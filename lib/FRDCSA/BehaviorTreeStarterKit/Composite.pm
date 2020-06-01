@@ -1,6 +1,6 @@
-package FRDCSA::BehaviorTree::Composite;
+package FRDCSA::BehaviorTreeStarterKit::Composite;
 
-use base 'FRDCSA::BehaviorTree::Behavior';
+use base 'FRDCSA::BehaviorTreeStarterKit::Behavior';
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -13,8 +13,8 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Composite - A behavior node with multiple
-children behaviors.
+FRDCSA::BehaviorTreeStarterKit::Composite - A behavior node with
+multiple children behaviors.
 
 =head1 DESCRIPTION
 

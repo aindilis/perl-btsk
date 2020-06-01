@@ -1,6 +1,6 @@
-package FRDCSA::BehaviorTree::Decorator;
+package FRDCSA::BehaviorTreeStarterKit::Decorator;
 
-use base 'FRDCSA::BehaviorTree::Behavior';
+use base 'FRDCSA::BehaviorTreeStarterKit::Behavior';
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -13,7 +13,8 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Decorator - Encapsulates other single behaviors.
+FRDCSA::BehaviorTreeStarterKit::Decorator - Encapsulates other single
+behaviors.
 
 =head1 DESCRIPTION
 

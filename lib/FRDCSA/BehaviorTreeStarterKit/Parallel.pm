@@ -1,6 +1,6 @@
-package FRDCSA::BehaviorTree::Parallel;
+package FRDCSA::BehaviorTreeStarterKit::Parallel;
 
-use base 'FRDCSA::BehaviorTree::Composite';
+use base 'FRDCSA::BehaviorTreeStarterKit::Composite';
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -14,7 +14,7 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Parallel -
+FRDCSA::BehaviorTreeStarterKit::Parallel -
 
 =head1 DESCRIPTION
 

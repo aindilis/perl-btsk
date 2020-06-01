@@ -1,19 +1,19 @@
-package FRDCSA::BehaviorTree::Monitor;
+package FRDCSA::BehaviorTreeStarterKit::Filter;
 
-use base 'FRDCSA::BehaviorTree::Parallel';
+use base 'FRDCSA::BehaviorTreeStarterKit::Sequence';
 
 use Class::MethodMaker
   new_with_init => 'new',
   get_set       =>
   [
 
-   qw /  /
+   qw / m_CurrentChild /
 
   ];
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Monitor -
+FRDCSA::BehaviorTreeStarterKit::Filter -
 
 =head1 DESCRIPTION
 
@@ -34,15 +34,6 @@ Andrew John Dougherty
 GPLv3
 
 =cut
-
-=item init()
-
-=cut
-
-sub init {
-  my ($self,%args) = @_;
-  $self->SUPER::init(%args);
-}
 
 =item addCondition()
 

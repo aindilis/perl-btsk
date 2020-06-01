@@ -1,6 +1,8 @@
-package FRDCSA::BehaviorTree::Sequence;
+package FRDCSA::BehaviorTreeStarterKit::Sequence;
 
-use base 'FRDCSA::BehaviorTree::Composite';
+use base 'FRDCSA::BehaviorTreeStarterKit::Composite';
+
+use Data::Dumper;
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -13,7 +15,7 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Sequence - 
+FRDCSA::BehaviorTreeStarterKit::Sequence -
 
 =head1 DESCRIPTION
 

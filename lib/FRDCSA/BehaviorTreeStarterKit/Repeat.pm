@@ -1,6 +1,6 @@
-package FRDCSA::BehaviorTree::Repeat;
+package FRDCSA::BehaviorTreeStarterKit::Repeat;
 
-use base 'FRDCSA::BehaviorTree::Decorator';
+use base 'FRDCSA::BehaviorTreeStarterKit::Decorator';
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -13,7 +13,7 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Repeat - Run child behavior until meeting a
+FRDCSA::BehaviorTreeStarterKit::Repeat - Run child behavior until meeting a
 threshold.
 
 =head1 DESCRIPTION

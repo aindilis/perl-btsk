@@ -1,18 +1,18 @@
 {
-   "abstract" : "A transliteration (and perhaps extension) of the Behavior Tree Starter Kit (BTSK) to Perl",
+   "abstract" : "unknown",
    "author" : [
-      "Andrew John Dougherty <adougher9@gmail.com>"
+      "unknown"
    ],
    "dynamic_config" : 0,
    "generated_by" : "ExtUtils::MakeMaker version 7.44, CPAN::Meta::Converter version 2.150010",
    "license" : [
-      "perl_5"
+      "unknown"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : 2
    },
-   "name" : "FRDCSA-BehaviorTree",
+   "name" : "perl-btsk",
    "no_index" : {
       "directory" : [
          "t",
@@ -31,15 +31,12 @@
          }
       },
       "runtime" : {
-         "requires" : {}
-      },
-      "test" : {
          "requires" : {
-            "Test::More" : "1.001014"
+            "Mojolicious" : "8.40"
          }
       }
    },
    "release_status" : "stable",
-   "version" : 0.001,
+   "version" : "0.01",
    "x_serialization_backend" : "JSON::PP version 4.04"
 }

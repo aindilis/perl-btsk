@@ -1,19 +1,19 @@
-package FRDCSA::BehaviorTree::ActiveSelector;
+package FRDCSA::BehaviorTreeStarterKit::Selector;
 
-use base 'FRDCSA::BehaviorTree::Selector';
+use base 'FRDCSA::BehaviorTreeStarterKit::Composite';
 
 use Class::MethodMaker
   new_with_init => 'new',
   get_set       =>
   [
 
-   qw /  /
+   qw / m_CurrentChild /
 
   ];
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::ActiveSelector -
+FRDCSA::BehaviorTreeStarterKit::Selector -
 
 =head1 DESCRIPTION
 
@@ -35,13 +35,14 @@ GPLv3
 
 =cut
 
+
 =item onInitialize()
 
 =cut
 
 sub onInitialize {
   my ($self,%args) = @_;
-  $self->m_CurrentChild($self->size - 1);
+  $self->m_CurrentChild(0);
 }
 
 
@@ -51,17 +52,22 @@ sub onInitialize {
 
 sub update {
   my ($self,%args) = @_;
-  my $prev = $self->m_CurrentChild;
+  while (1) {
 
-  FRDCSA::BehaviorTree::Selector::onInitialize($self);
-  my $result = FRDCSA::BehaviorTree::Selector::update($self);
+    my $status = $self->m_Children->[$self->m_CurrentChild]->tick();
 
-  if (($prev != ($self->size - 1)) and ($self->m_CurrentChild != $prev)) {
-    # $prev->abort();
-    $self->m_Children->[$prev]->onTerminate(Status => 'BH_ABORTED');
+    if ($status->{Status} ne 'BH_FAILURE') {
+      return $status;
+    }
+
+    $self->m_CurrentChild($self->m_CurrentChild + 1);
+    if ($self->m_CurrentChild eq $self->size) {
+      return
+	{
+	 Status => 'BH_FAILURE',
+	};
+    }
   }
-
-  return $result;
 }
 
 1;

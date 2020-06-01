@@ -1,4 +1,4 @@
-# This Makefile is for the FRDCSA::BehaviorTree extension to perl.
+# This Makefile is for the perl-btsk extension to perl.
 #
 # It was generated automatically by MakeMaker version
 # 7.44 (Revision: 74400) from the contents of
@@ -11,16 +11,12 @@
 
 #   MakeMaker Parameters:
 
-#     ABSTRACT => q[A transliteration (and perhaps extension) of the Behavior Tree Starter Kit (BTSK) to Perl]
-#     AUTHOR => [q[Andrew John Dougherty <adougher9@gmail.com>]]
 #     BUILD_REQUIRES => {  }
 #     CONFIGURE_REQUIRES => {  }
-#     LICENSE => q[perl]
-#     NAME => q[FRDCSA::BehaviorTree]
-#     PL_FILES => {  }
-#     PREREQ_PM => { Test::More=>q[1.001014] }
-#     TEST_REQUIRES => { Test::More=>q[1.001014] }
-#     VERSION_FROM => q[lib/FRDCSA/BehaviorTree/BehaviorTree.pm]
+#     PREREQ_PM => { Mojolicious=>q[8.40] }
+#     TEST_REQUIRES => {  }
+#     VERSION => q[0.01]
+#     test => { TESTS=>q[t/*.t] }
 
 # --- MakeMaker post_initialize section:
 
@@ -57,13 +53,13 @@ VENDORLIBEXP = /usr/share/perl5
 AR_STATIC_ARGS = cr
 DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
-NAME = FRDCSA::BehaviorTree
-NAME_SYM = FRDCSA_BehaviorTree
-VERSION = 0.001
+NAME = perl-btsk
+NAME_SYM = perl_btsk
+VERSION = 0.01
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_001
+VERSION_SYM = 0_01
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.001
+XS_VERSION = 0.01
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -151,11 +147,11 @@ MM_REVISION = 74400
 # PARENT_NAME = NAME without BASEEXT and no trailing :: (eg Foo::Bar)
 # DLBASE  = Basename part of dynamic library. May be just equal BASEEXT.
 MAKE = make
-FULLEXT = FRDCSA/BehaviorTree
-BASEEXT = BehaviorTree
-PARENT_NAME = FRDCSA
+FULLEXT = perl-btsk
+BASEEXT = btsk
+PARENT_NAME = 
 DLBASE = $(BASEEXT)
-VERSION_FROM = lib/FRDCSA/BehaviorTree/BehaviorTree.pm
+VERSION_FROM = 
 OBJECT = 
 LDFROM = $(OBJECT)
 LINKTYPE = dynamic
@@ -167,26 +163,26 @@ C_FILES  =
 O_FILES  = 
 H_FILES  = 
 MAN1PODS = 
-MAN3PODS = lib/FRDCSA/BehaviorTree/Action.pm \
-	lib/FRDCSA/BehaviorTree/ActiveSelector.pm \
-	lib/FRDCSA/BehaviorTree/Behavior.pm \
-	lib/FRDCSA/BehaviorTree/BehaviorTree.pm \
-	lib/FRDCSA/BehaviorTree/Composite.pm \
-	lib/FRDCSA/BehaviorTree/Condition.pm \
-	lib/FRDCSA/BehaviorTree/Decorator.pm \
-	lib/FRDCSA/BehaviorTree/Filter.pm \
-	lib/FRDCSA/BehaviorTree/Monitor.pm \
-	lib/FRDCSA/BehaviorTree/Parallel.pm \
-	lib/FRDCSA/BehaviorTree/Repeat.pm \
-	lib/FRDCSA/BehaviorTree/Selector.pm \
-	lib/FRDCSA/BehaviorTree/Sequence.pm
+MAN3PODS = lib/FRDCSA/BehaviorTreeStarterKit/Action.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/ActiveSelector.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Behavior.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/BehaviorTree.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Composite.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Condition.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Decorator.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Filter.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Monitor.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Parallel.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Repeat.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Selector.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Sequence.pm
 
 # Where is the Config information that we are using/depend on
 CONFIGDEP = $(PERL_ARCHLIBDEP)$(DFSEP)Config.pm $(PERL_INCDEP)$(DFSEP)config.h
 
 # Where to build things
-INST_LIBDIR      = $(INST_LIB)/FRDCSA
-INST_ARCHLIBDIR  = $(INST_ARCHLIB)/FRDCSA
+INST_LIBDIR      = $(INST_LIB)
+INST_ARCHLIBDIR  = $(INST_ARCHLIB)
 
 INST_AUTODIR     = $(INST_LIB)/auto/$(FULLEXT)
 INST_ARCHAUTODIR = $(INST_ARCHLIB)/auto/$(FULLEXT)
@@ -202,19 +198,19 @@ PERL_ARCHIVEDEP    =
 PERL_ARCHIVE_AFTER = 
 
 
-TO_INST_PM = lib/FRDCSA/BehaviorTree/Action.pm \
-	lib/FRDCSA/BehaviorTree/ActiveSelector.pm \
-	lib/FRDCSA/BehaviorTree/Behavior.pm \
-	lib/FRDCSA/BehaviorTree/BehaviorTree.pm \
-	lib/FRDCSA/BehaviorTree/Composite.pm \
-	lib/FRDCSA/BehaviorTree/Condition.pm \
-	lib/FRDCSA/BehaviorTree/Decorator.pm \
-	lib/FRDCSA/BehaviorTree/Filter.pm \
-	lib/FRDCSA/BehaviorTree/Monitor.pm \
-	lib/FRDCSA/BehaviorTree/Parallel.pm \
-	lib/FRDCSA/BehaviorTree/Repeat.pm \
-	lib/FRDCSA/BehaviorTree/Selector.pm \
-	lib/FRDCSA/BehaviorTree/Sequence.pm
+TO_INST_PM = lib/FRDCSA/BehaviorTreeStarterKit/Action.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/ActiveSelector.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Behavior.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/BehaviorTree.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Composite.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Condition.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Decorator.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Filter.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Monitor.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Parallel.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Repeat.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Selector.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Sequence.pm
 
 
 # --- MakeMaker platform_constants section:
@@ -283,8 +279,8 @@ CI = ci -u
 RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
-DISTNAME = FRDCSA-BehaviorTree
-DISTVNAME = FRDCSA-BehaviorTree-0.001
+DISTNAME = perl-btsk
+DISTVNAME = perl-btsk-0.01
 
 
 # --- MakeMaker macro section:
@@ -440,33 +436,33 @@ POD2MAN = $(POD2MAN_EXE)
 
 
 manifypods : pure_all config  \
-	lib/FRDCSA/BehaviorTree/Action.pm \
-	lib/FRDCSA/BehaviorTree/ActiveSelector.pm \
-	lib/FRDCSA/BehaviorTree/Behavior.pm \
-	lib/FRDCSA/BehaviorTree/BehaviorTree.pm \
-	lib/FRDCSA/BehaviorTree/Composite.pm \
-	lib/FRDCSA/BehaviorTree/Condition.pm \
-	lib/FRDCSA/BehaviorTree/Decorator.pm \
-	lib/FRDCSA/BehaviorTree/Filter.pm \
-	lib/FRDCSA/BehaviorTree/Monitor.pm \
-	lib/FRDCSA/BehaviorTree/Parallel.pm \
-	lib/FRDCSA/BehaviorTree/Repeat.pm \
-	lib/FRDCSA/BehaviorTree/Selector.pm \
-	lib/FRDCSA/BehaviorTree/Sequence.pm
+	lib/FRDCSA/BehaviorTreeStarterKit/Action.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/ActiveSelector.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Behavior.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/BehaviorTree.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Composite.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Condition.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Decorator.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Filter.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Monitor.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Parallel.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Repeat.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Selector.pm \
+	lib/FRDCSA/BehaviorTreeStarterKit/Sequence.pm
 	$(NOECHO) $(POD2MAN) --section=$(MAN3SECTION) --perm_rw=$(PERM_RW) -u \
-	  lib/FRDCSA/BehaviorTree/Action.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Action.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/ActiveSelector.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::ActiveSelector.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Behavior.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Behavior.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/BehaviorTree.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::BehaviorTree.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Composite.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Composite.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Condition.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Condition.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Decorator.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Decorator.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Filter.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Filter.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Monitor.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Monitor.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Parallel.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Parallel.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Repeat.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Repeat.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Selector.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Selector.$(MAN3EXT) \
-	  lib/FRDCSA/BehaviorTree/Sequence.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTree::Sequence.$(MAN3EXT) 
+	  lib/FRDCSA/BehaviorTreeStarterKit/Action.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Action.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/ActiveSelector.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::ActiveSelector.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Behavior.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Behavior.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/BehaviorTree.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::BehaviorTree.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Composite.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Composite.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Condition.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Condition.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Decorator.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Decorator.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Filter.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Filter.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Monitor.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Monitor.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Parallel.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Parallel.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Repeat.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Repeat.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Selector.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Selector.$(MAN3EXT) \
+	  lib/FRDCSA/BehaviorTreeStarterKit/Sequence.pm $(INST_MAN3DIR)/FRDCSA::BehaviorTreeStarterKit::Sequence.$(MAN3EXT) 
 
 
 
@@ -534,45 +530,45 @@ realclean purge :: realclean_subdirs
 metafile : create_distdir
 	$(NOECHO) $(ECHO) Generating META.yml
 	$(NOECHO) $(ECHO) '---' > META_new.yml
-	$(NOECHO) $(ECHO) 'abstract: '\''A transliteration (and perhaps extension) of the Behavior Tree Starter Kit (BTSK) to Perl'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'abstract: unknown' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
-	$(NOECHO) $(ECHO) '  - '\''Andrew John Dougherty <adougher9@gmail.com>'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) '  - unknown' >> META_new.yml
 	$(NOECHO) $(ECHO) 'build_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: '\''0'\''' >> META_new.yml
-	$(NOECHO) $(ECHO) '  Test::More: '\''1.001014'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'dynamic_config: 1' >> META_new.yml
 	$(NOECHO) $(ECHO) 'generated_by: '\''ExtUtils::MakeMaker version 7.44, CPAN::Meta::Converter version 2.150010'\''' >> META_new.yml
-	$(NOECHO) $(ECHO) 'license: perl' >> META_new.yml
+	$(NOECHO) $(ECHO) 'license: unknown' >> META_new.yml
 	$(NOECHO) $(ECHO) 'meta-spec:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  url: http://module-build.sourceforge.net/META-spec-v1.4.html' >> META_new.yml
 	$(NOECHO) $(ECHO) '  version: '\''1.4'\''' >> META_new.yml
-	$(NOECHO) $(ECHO) 'name: FRDCSA-BehaviorTree' >> META_new.yml
+	$(NOECHO) $(ECHO) 'name: perl-btsk' >> META_new.yml
 	$(NOECHO) $(ECHO) 'no_index:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  directory:' >> META_new.yml
 	$(NOECHO) $(ECHO) '    - t' >> META_new.yml
 	$(NOECHO) $(ECHO) '    - inc' >> META_new.yml
-	$(NOECHO) $(ECHO) 'requires: {}' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version: 0.001' >> META_new.yml
+	$(NOECHO) $(ECHO) 'requires:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  Mojolicious: '\''8.40'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version: '\''0.01'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'x_serialization_backend: '\''CPAN::Meta::YAML version 0.018'\''' >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
 	$(NOECHO) $(ECHO) '{' > META_new.json
-	$(NOECHO) $(ECHO) '   "abstract" : "A transliteration (and perhaps extension) of the Behavior Tree Starter Kit (BTSK) to Perl",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "abstract" : "unknown",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "author" : [' >> META_new.json
-	$(NOECHO) $(ECHO) '      "Andrew John Dougherty <adougher9@gmail.com>"' >> META_new.json
+	$(NOECHO) $(ECHO) '      "unknown"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
 	$(NOECHO) $(ECHO) '   "dynamic_config" : 1,' >> META_new.json
 	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 7.44, CPAN::Meta::Converter version 2.150010",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "license" : [' >> META_new.json
-	$(NOECHO) $(ECHO) '      "perl_5"' >> META_new.json
+	$(NOECHO) $(ECHO) '      "unknown"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
 	$(NOECHO) $(ECHO) '   "meta-spec" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",' >> META_new.json
 	$(NOECHO) $(ECHO) '      "version" : 2' >> META_new.json
 	$(NOECHO) $(ECHO) '   },' >> META_new.json
-	$(NOECHO) $(ECHO) '   "name" : "FRDCSA-BehaviorTree",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "name" : "perl-btsk",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "no_index" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '      "directory" : [' >> META_new.json
 	$(NOECHO) $(ECHO) '         "t",' >> META_new.json
@@ -591,16 +587,13 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '         }' >> META_new.json
 	$(NOECHO) $(ECHO) '      },' >> META_new.json
 	$(NOECHO) $(ECHO) '      "runtime" : {' >> META_new.json
-	$(NOECHO) $(ECHO) '         "requires" : {}' >> META_new.json
-	$(NOECHO) $(ECHO) '      },' >> META_new.json
-	$(NOECHO) $(ECHO) '      "test" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
-	$(NOECHO) $(ECHO) '            "Test::More" : "1.001014"' >> META_new.json
+	$(NOECHO) $(ECHO) '            "Mojolicious" : "8.40"' >> META_new.json
 	$(NOECHO) $(ECHO) '         }' >> META_new.json
 	$(NOECHO) $(ECHO) '      }' >> META_new.json
 	$(NOECHO) $(ECHO) '   },' >> META_new.json
 	$(NOECHO) $(ECHO) '   "release_status" : "stable",' >> META_new.json
-	$(NOECHO) $(ECHO) '   "version" : 0.001,' >> META_new.json
+	$(NOECHO) $(ECHO) '   "version" : "0.01",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "x_serialization_backend" : "JSON::PP version 4.04"' >> META_new.json
 	$(NOECHO) $(ECHO) '}' >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
@@ -910,33 +903,34 @@ testdb_static :: static pure_all
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="FRDCSA-BehaviorTree" VERSION="0.001">' > FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '    <ABSTRACT>A transliteration (and perhaps extension) of the Behavior Tree Starter Kit (BTSK) to Perl</ABSTRACT>' >> FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '    <AUTHOR>Andrew John Dougherty &lt;adougher9@gmail.com&gt;</AUTHOR>' >> FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="x86_64-linux-gnu-thread-multi-5.28" />' >> FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> FRDCSA-BehaviorTree.ppd
-	$(NOECHO) $(ECHO) '</SOFTPKG>' >> FRDCSA-BehaviorTree.ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="perl-btsk" VERSION="0.01">' > perl-btsk.ppd
+	$(NOECHO) $(ECHO) '    <ABSTRACT></ABSTRACT>' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR></AUTHOR>' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Mojolicious::" VERSION="8.40" />' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="x86_64-linux-gnu-thread-multi-5.28" />' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> perl-btsk.ppd
+	$(NOECHO) $(ECHO) '</SOFTPKG>' >> perl-btsk.ppd
 
 
 # --- MakeMaker pm_to_blib section:
 
 pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
-	  'lib/FRDCSA/BehaviorTree/Action.pm' 'blib/lib/FRDCSA/BehaviorTree/Action.pm' \
-	  'lib/FRDCSA/BehaviorTree/ActiveSelector.pm' 'blib/lib/FRDCSA/BehaviorTree/ActiveSelector.pm' \
-	  'lib/FRDCSA/BehaviorTree/Behavior.pm' 'blib/lib/FRDCSA/BehaviorTree/Behavior.pm' \
-	  'lib/FRDCSA/BehaviorTree/BehaviorTree.pm' 'blib/lib/FRDCSA/BehaviorTree/BehaviorTree.pm' \
-	  'lib/FRDCSA/BehaviorTree/Composite.pm' 'blib/lib/FRDCSA/BehaviorTree/Composite.pm' \
-	  'lib/FRDCSA/BehaviorTree/Condition.pm' 'blib/lib/FRDCSA/BehaviorTree/Condition.pm' \
-	  'lib/FRDCSA/BehaviorTree/Decorator.pm' 'blib/lib/FRDCSA/BehaviorTree/Decorator.pm' \
-	  'lib/FRDCSA/BehaviorTree/Filter.pm' 'blib/lib/FRDCSA/BehaviorTree/Filter.pm' \
-	  'lib/FRDCSA/BehaviorTree/Monitor.pm' 'blib/lib/FRDCSA/BehaviorTree/Monitor.pm' \
-	  'lib/FRDCSA/BehaviorTree/Parallel.pm' 'blib/lib/FRDCSA/BehaviorTree/Parallel.pm' \
-	  'lib/FRDCSA/BehaviorTree/Repeat.pm' 'blib/lib/FRDCSA/BehaviorTree/Repeat.pm' \
-	  'lib/FRDCSA/BehaviorTree/Selector.pm' 'blib/lib/FRDCSA/BehaviorTree/Selector.pm' \
-	  'lib/FRDCSA/BehaviorTree/Sequence.pm' 'blib/lib/FRDCSA/BehaviorTree/Sequence.pm' 
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Action.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Action.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/ActiveSelector.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/ActiveSelector.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Behavior.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Behavior.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/BehaviorTree.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/BehaviorTree.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Composite.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Composite.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Condition.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Condition.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Decorator.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Decorator.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Filter.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Filter.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Monitor.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Monitor.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Parallel.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Parallel.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Repeat.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Repeat.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Selector.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Selector.pm' \
+	  'lib/FRDCSA/BehaviorTreeStarterKit/Sequence.pm' 'blib/lib/FRDCSA/BehaviorTreeStarterKit/Sequence.pm' 
 	$(NOECHO) $(TOUCH) pm_to_blib
 
 

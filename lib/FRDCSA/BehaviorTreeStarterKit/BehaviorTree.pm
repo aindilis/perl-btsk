@@ -1,4 +1,4 @@
-package FRDCSA::BehaviorTree::BehaviorTree;
+package FRDCSA::BehaviorTreeStarterKit::BehaviorTree;
 
 our $VERSION = 0.001;
 
@@ -15,7 +15,8 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::BehaviorTree - Class implementing the behaviors tree.
+FRDCSA::BehaviorTreeStarterKit::BehaviorTree - Class implementing the
+behaviors tree.
 
 =head1 DESCRIPTION
 

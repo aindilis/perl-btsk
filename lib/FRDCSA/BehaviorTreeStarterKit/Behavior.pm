@@ -1,4 +1,4 @@
-package FRDCSA::BehaviorTree::Behavior;
+package FRDCSA::BehaviorTreeStarterKit::Behavior;
 
 use Data::Dumper;
 
@@ -13,7 +13,8 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Behavior - Base class of all behaviors in tree.
+FRDCSA::BehaviorTreeStarterKit::Behavior - Base class of all behaviors
+in tree.
 
 =head1 DESCRIPTION
 
@@ -81,7 +82,7 @@ status of terminated.
 
 sub update {
   my ($self,%args) = @_;
-  return {Status => $self->Status};
+  return {Status => $self->m_eStatus};
 }
 
 =item onTerminate(Status => $status)
@@ -92,7 +93,7 @@ Called just once, right after the earlier update signals it's stopped.
 
 sub onTerminate {
   my ($self,%args) = @_;
-  $self->Status($args{Status});
+  $self->m_eStatus($args{Status});
 }
 
 =item tick()
@@ -107,13 +108,13 @@ sub tick {
     $self->onInitialize();
   }
 
-  $self->m_eStatus($self->update());
+  $self->m_eStatus($self->update->{Status});
 
   if ($self->m_eStatus ne 'BH_RUNNING') {
     $self->onTerminate(Status => $self->m_eStatus);
   }
 
-  return $self->m_eStatus;
+  return {Status => $self->m_eStatus};
 }
 
 =item reset()
@@ -142,8 +143,8 @@ sub abort {
 sub isTerminated {
   my ($self,%args) = @_;
   return
-    ($self->m_eStatus eq 'BH_SUCCESS') or
-    ($self->m_eStatus eq 'BH_FAILURE');
+    (($self->m_eStatus eq 'BH_SUCCESS') or
+     ($self->m_eStatus eq 'BH_FAILURE'));
 }
 
 =item isRunning()

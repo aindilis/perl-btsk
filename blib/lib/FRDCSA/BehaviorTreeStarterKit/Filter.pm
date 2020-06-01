@@ -1,6 +1,6 @@
-package FRDCSA::BehaviorTree::Filter;
+package FRDCSA::BehaviorTreeStarterKit::Filter;
 
-use base 'FRDCSA::BehaviorTree::Sequence';
+use base 'FRDCSA::BehaviorTreeStarterKit::Sequence';
 
 use Class::MethodMaker
   new_with_init => 'new',
@@ -13,7 +13,7 @@ use Class::MethodMaker
 
 =head1 NAME
 
-FRDCSA::BehaviorTree::Filter -
+FRDCSA::BehaviorTreeStarterKit::Filter -
 
 =head1 DESCRIPTION
 
